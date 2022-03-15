@@ -1,0 +1,26 @@
+<html>
+<head>
+    <title>Acronyms-result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Acronyms-result</h1>
+        <h2>Words: {{inp}}</h2>
+        <br>
+        <h3>acronyms:</h3>
+        <h3>
+            {% for a in acronyms %}
+                {{a}} 
+                {% if loop.revindex0 != 0 %}
+                    -
+                {% endif %}
+            {% endfor %}
+        </h3>
+        <br>
+        <div class="center">
+            <a href="{{ url_for('index') }}"><button>Back</button></a>
+        </div>
+    </div>
+</body>
+</html>
